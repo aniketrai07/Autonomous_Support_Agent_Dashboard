@@ -1,0 +1,8 @@
+import re
+
+def extract_json(text):
+    if not text:
+        return None
+
+    match = re.search(r"\{[\s\S]*\}", text)
+    return match.group() if match else None
